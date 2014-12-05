@@ -4,12 +4,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="ResourceType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="resallocation" eType="#//ResAllocation"
         eOpposite="#//ResAllocation/resourcetype"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameAAAA" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newEReference" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="periodicactivity" upperBound="-1"
         eType="#//PeriodicActivity" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newEReference" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourcetype" upperBound="-1"
         eType="#//ResourceType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ResAllocation">
@@ -18,15 +18,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PeriodicActivity">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newEReference" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" upperBound="-1"
         eType="#//Date" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newEReference" upperBound="-1"
-        eType="#//Date" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newEReference" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" upperBound="-1" eType="#//Date"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resallocation" upperBound="-1"
         eType="#//ResAllocation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newEReference" upperBound="-1"
-        eType="#//Rule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1" eType="#//Rule"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="activities" eType="ecore:EClass ../../fr.esir.lsi.exploitation/model/exploitation.ecore#//Atelier"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Date">
@@ -39,7 +39,7 @@
     <eLiterals name="january" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Rule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newEReference" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" upperBound="-1"
         eType="#//Predicate" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Predicate"/>
